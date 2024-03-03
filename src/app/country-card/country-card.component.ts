@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import type { Country } from '../country';
-import { WorldService } from '../world.service';
 
 @Component({
   selector: 'country-card',
@@ -10,7 +9,17 @@ import { WorldService } from '../world.service';
   imports: [CommonModule, RouterLink],
   templateUrl: './country-card.component.html'
 })
-export class CountryCardComponent {
+export class CountryCardComponent implements OnInit {
   @Input() country!: Country;
-  worldService = inject(WorldService);
+  capital?: string;
+  flagUrl?: string;
+  name?: string;
+  population?: string;
+
+  ngOnInit() {
+    this.name = this.country.name.common;
+    this.flagUrl = `url(${this.country.flags.svg})`;
+    this.capital = this.country.capital?.[0] ?? 'N/A';
+    this.population = this.country.population.toLocaleString('en-us');
+  }
 }

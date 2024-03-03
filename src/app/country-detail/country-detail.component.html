@@ -1,1 +1,78 @@
-<p>country-detail works!</p>
+<div class="mb-8 flex">
+  <a
+    [ngClass]="['inline-flex items-center shadow', buttonClasses]"
+    [routerLink]="'/'"
+  >
+    <svg
+      class="mr-2"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+      />
+    </svg>
+    Back
+  </a>
+</div>
+<div *ngIf="country" class="grid grid-cols-fluid gap-4 items-center">
+  <div class="max-w-lg">
+    <img
+      *ngIf="country.flags?.svg"
+      class="max-h-80 border dark:border-gray-500"
+      [alt]="country.flags.alt"
+      [src]="country.flags.svg"
+    />
+  </div>
+  <div class="text-left">
+    <h2
+      class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
+    >
+      {{ country.name.common }}
+    </h2>
+    <div class="grid grid-cols-2 gap-4">
+      <description-list
+        [items]="[
+          { key: 'Capital', value: capital },
+          { key: 'Region', value: country.region },
+          {
+            key: 'Population',
+            value: population
+          }
+        ]"
+      />
+      <description-list
+        [items]="[
+          { key: 'Top-Level Domain', value: domains },
+          {
+            key: 'Currencies',
+            value: currencies
+          },
+          {
+            key: 'Languages',
+            value: languages
+          }
+        ]"
+      />
+    </div>
+    <dl
+      *ngIf="borderCountries && borderKeys.length"
+      class="flex flex-col md:flex-row mt-8 text-sm"
+    >
+      <dt class="font-bold whitespace-nowrap mr-4">Border Countries:</dt>
+      <dd class="flex flex-wrap">
+        <a
+          *ngFor="let borderKey of borderKeys"
+          [routerLink]="['/country', borderKey]"
+          [ngClass]="buttonClasses"
+        >
+          {{ borderCountries[borderKey] }}
+        </a>
+      </dd>
+    </dl>
+  </div>
+</div>
