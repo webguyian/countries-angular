@@ -1,0 +1,8 @@
+<dl class="text-sm">
+  <div *ngFor="let item of items" class="flex mb-2">
+    <ng-container *ngIf="item.value">
+      <dt class="font-bold mr-2">{{ item.key }}:</dt>
+      <dd>{{ item.value }}</dd>
+    </ng-container>
+  </div>
+</dl>
