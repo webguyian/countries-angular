@@ -1,27 +1,36 @@
-# CountriesAngular
+# Countries: Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+**Frontend Mentor - REST Countries API with color theme switcher solution**
 
-## Development server
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Overview
 
-## Code scaffolding
+### The challenge
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Users should be able to:
 
-## Build
+- See all countries from the API on the homepage
+- Search for a country using an `input` field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Screenshot
 
-## Running unit tests
+![Screenshot](./screenshot.jpg)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Built with
 
-## Running end-to-end tests
+- Semantic HTML5 markup
+- CSS Grid
+- Mobile-first workflow
+- [Angular](https://angular.io/) - JS framework
+- [Tailwind CSS](https://tailwindcss.com/) - For styles
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Author
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Website - [Web Guy Ian](https://webguyian.com/)
+- GitHub - [@webguyian](https://github.com/webguyian)
+- Frontend Mentor - [@webguyian](https://www.frontendmentor.io/profile/webguyian)
